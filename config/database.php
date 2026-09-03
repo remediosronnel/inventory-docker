@@ -1,5 +1,5 @@
 <?php
-$host = "localhost";
+$host = "mysql";
 $username = "inventory_user";
 $password = "inventory_pass";
 $database = "inventory_system";
