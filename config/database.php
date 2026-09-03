@@ -1,14 +1,19 @@
 <?php
-$host = "mysql";
-$username = "inventory_user";
-$password = "inventory_pass";
-$database = "inventory_system";
 
-$conn = mysqli_connect( $host, $username, $password, $database );
+$host = getenv("DB_HOST");
+$username = getenv("DB_USER");
+$password = getenv("DB_PASSWORD");
+$database = getenv("DB_NAME");
 
-if(!$conn){
-    die("Database Connection Failed: "
-    . mysqli_connect_error());
+$conn = mysqli_connect(
+    $host,
+    $username,
+    $password,
+    $database
+);
+
+if (!$conn) {
+    die("Database Connection Failed: " . mysqli_connect_error());
 }
 
 ?>

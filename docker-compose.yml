@@ -9,6 +9,11 @@ services:
       - .:/var/www/html
     depends_on:
       - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: inventory_user
+      DB_PASSWORD: inventory_pass
+      DB_NAME: inventory_system
 
   mysql:
     image: mysql:8.0
