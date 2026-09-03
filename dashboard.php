@@ -25,7 +25,7 @@ include "includes/sidebar.php";
 ?>
 
 
-
+<div class="content">
     <h2 class="mb-3"> Inventory Dashboard   </h2>
     <p>Welcome,<strong> <?php echo $_SESSION['username']; ?> </strong> </p>
     <hr>
