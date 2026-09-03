@@ -9,4 +9,4 @@
         <p> User: <strong> <?php echo $_SESSION['username']; ?> </strong> </p>
         <a href="logout.php" class="btn btn-danger w-100"> Logout </a>
 </div>
-    <div class="content"></div>
+    
