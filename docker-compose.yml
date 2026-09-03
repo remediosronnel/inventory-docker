@@ -1,29 +1,27 @@
 services:
 
   web:
-    build: .
+    image: php:8.2-apache
     container_name: inventory-web
     ports:
       - "8080:80"
-    depends_on:
-      - mysql
     volumes:
       - .:/var/www/html
+    depends_on:
+      - mysql
 
   mysql:
     image: mysql:8.0
-    container_name: inventory-db
-    restart: always
+    container_name: inventory-mysql
     environment:
       MYSQL_DATABASE: inventory_system
       MYSQL_USER: inventory_user
       MYSQL_PASSWORD: inventory_pass
-      MYSQL_ROOT_PASSWORD: root_pass
-    volumes:
-      - mysql_data:/var/lib/mysql
-      - ./inventory_system.sql:/docker-entrypoint-initdb.d/inventory_system.sql
+      MYSQL_ROOT_PASSWORD: rootpass
     ports:
-      - "3306:3306"
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
 
 volumes:
-  mysql_data:
+  mysql-data:
