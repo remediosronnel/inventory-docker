@@ -1,10 +1,13 @@
 <?php
-include "../includes/header.php";
-include "../includes/sidebar.php";
 include "../config/database.php";
 
 $result = mysqli_query($conn, "SELECT * FROM categories ORDER BY id DESC");
 
+
+
+
+include "../includes/header.php";
+include "../includes/sidebar.php";
 ?>
 
 <div class="content">
