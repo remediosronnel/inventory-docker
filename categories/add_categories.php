@@ -1,7 +1,5 @@
 <?php
 
-include "../includes/header.php";
-include "../includes/sidebar.php";
 include "../config/database.php";
 
 if(isset($_POST['save'])){
@@ -10,9 +8,14 @@ if(isset($_POST['save'])){
         VALUES('$category_name')";
     mysqli_query($conn,$query);
 
-header("Location: ../categories.php");
+header("Location: ../categories/categories.php");
 }
+
+
+include "../includes/header.php";
+include "../includes/sidebar.php";
 ?>
+
 
 <div class="content">
     <h2>Add Category</h2>
@@ -23,7 +26,7 @@ header("Location: ../categories.php");
         <input type="text" name="category_name" class="form-control" required>
     </div>
         <button class="btn btn-success" name="save"> Save Category </button>
-        <a href="../categories.php" class="btn btn-secondary"> Back </a>
+        <a href="../categories/categories.php" class="btn btn-secondary"> Back </a>
 </form>
 </div>
 

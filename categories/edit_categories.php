@@ -13,7 +13,7 @@ if(isset($_POST['update'])){
     mysqli_query($conn, "UPDATE categories  SET category_name='$name' WHERE id=$id" );
 
 
-header("Location: ../categories.php");
+header("Location: ../categories/categories.php");
 }
 ?>
 <div class="content">
@@ -24,7 +24,7 @@ header("Location: ../categories.php");
             <input  type="text" name="category_name" class="form-control"value="<?= $row['category_name']; ?>" required>
         </div>
             <button class="btn btn-primary" name="update">Update </button>
-            <a href="categories.php" class="btn btn-secondary"> Back </a> 
+            <a href="../categories/categories.php" class="btn btn-secondary"> Back </a> 
 </form>
 </div>
 <?php include "../includes/footer.php"; ?>

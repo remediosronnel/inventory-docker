@@ -16,7 +16,7 @@ exit();
     mysqli_query($conn, "DELETE FROM categories WHERE id=$id" );
 
 
-header("Location: ../categories.php");
+header("Location: /categories/categories.php");
 
 
 ?>
