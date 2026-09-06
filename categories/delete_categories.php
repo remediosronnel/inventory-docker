@@ -1,53 +1,22 @@
 <?php
 
 include "../config/database.php";
+    $id=$_GET['id'];
 
-
-$id=$_GET['id'];
-
-
-// Check if category is used by products
-
-$check=mysqli_query($conn,
-
-"SELECT * FROM products WHERE category_id=$id"
-
-);
-
-
+$check=mysqli_query($conn, "SELECT * FROM products WHERE category_id=$id" );
 
 if(mysqli_num_rows($check)>0){
-
-
-echo "
-
-<script>
-
-alert('Cannot delete. This category is used by products.');
-
-window.location='categories.php';
-
-</script>
-
-";
-
-
+    echo "
+        <script> alert('Cannot delete. This category is used by products.'); 
+            window.location='../categories.php';
+        </script> ";
 exit();
-
-
 }
 
+    mysqli_query($conn, "DELETE FROM categories WHERE id=$id" );
 
 
-mysqli_query($conn,
-
-"DELETE FROM categories WHERE id=$id"
-
-);
-
-
-
-header("Location: categories.php");
+header("Location: ../categories.php");
 
 
 ?>
