@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2026 at 06:29 PM
+-- Generation Time: Sep 06, 2026 at 04:39 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,15 +32,6 @@ CREATE TABLE `categories` (
   `category_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `category_name`) VALUES
-(1, 'Electronics'),
-(2, 'Accessories'),
-(3, 'Office Supplies');
-
 -- --------------------------------------------------------
 
 --
@@ -57,16 +48,6 @@ CREATE TABLE `products` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `product_name`, `category_id`, `supplier_id`, `quantity`, `price`, `created_at`) VALUES
-(1, 'Keyboard', 2, 1, 30, 1500.00, '2026-08-30 05:22:43'),
-(2, 'Mouse', 2, 1, 50, 500.00, '2026-08-30 05:22:43'),
-(5, 'Knife', 2, 4, 100, 12000.00, '2026-08-30 08:19:01'),
-(6, 'Tortillas', 1, 1, 15, 1250.00, '2026-08-30 14:08:09');
-
 -- --------------------------------------------------------
 
 --
@@ -79,15 +60,6 @@ CREATE TABLE `suppliers` (
   `contact` varchar(50) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `suppliers`
---
-
-INSERT INTO `suppliers` (`id`, `supplier_name`, `contact`, `email`) VALUES
-(1, 'ABC TechnologiesT', '09123456789', 'abcd@gmail.com'),
-(2, 'RMT Supplier', '09385883534', 'rmt-fighter.com'),
-(4, 'LokLok Hardware', '0956498775', '');
 
 -- --------------------------------------------------------
 
@@ -102,15 +74,6 @@ CREATE TABLE `transactions` (
   `quantity` int(11) DEFAULT NULL,
   `transaction_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `transactions`
---
-
-INSERT INTO `transactions` (`id`, `product_id`, `transaction_type`, `quantity`, `transaction_date`) VALUES
-(1, 1, 'IN', 2, '2026-08-30 07:17:42'),
-(2, 2, 'OUT', 3, '2026-08-30 08:08:20'),
-(3, 6, 'OUT', 35, '2026-08-30 14:08:36');
 
 -- --------------------------------------------------------
 
